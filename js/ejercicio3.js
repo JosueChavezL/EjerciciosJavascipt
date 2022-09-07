@@ -1,44 +1,26 @@
-let btnExecute3 = document.getElementById("btnExecute3");
-let resultEjercicio3 = document.getElementById("resultEjercicio3");
-let serieNum3 = [1, 22, 5, 17, 10, 5, 40, 5];
+let btnExecute4 = document.getElementById("btnExecute4");
+let resultEjercicio4 = document.getElementById("resultEjercicio4");
+let serieNum4 = [1, 2, 5, 14, 24, 31, 50, 105];
+let serieDes = [];
 
-btnExecute3.addEventListener("click", function (e){
-    e.preventDefault;
+btnExecute4.addEventListener("click", function (e){
+    e.preventDefault;   
+    serieDes = serieNum4;
+    let j = 0;
+    for (let i = (serieNum4.length) -1; i < 1; i--) {
     
-    let resCase = false;
-    let numRep;
-    
-    for (let i = 0; i < serieNum3.length; i++) {
         
-        if(resCase){
 
-            break;
+    serieDes[j] = serieNum4[i];
 
-        }else
-        {
-            for (let j = i+1; j < serieNum3.length; j++) {
-            
-                if (serieNum3[i] == serieNum3[j]){
-                
-                resCase = true;
-                numRep = serieNum3[j];
-                break;      
-                }   
-            }
-        }
-        }
-    switch (resCase) {
-        case true:
-            resultEjercicio3.innerHTML = "El número de la serie: " + serieNum3 + " que se repite es: <br/>" + numRep;
-            break;
-
-        case false:
-            
-            resultEjercicio3.innerHTML = "No hay un numero que se repita en la serie: " + serieNum3;
-                break;
+    j = j + 1;       
     
-        default:
-            break;
-    }   
+    }
     
-})
+    resultEjercicio4.innerHTML = "La serie: " + serieNum4 + " desordenada, se ve de la siguiente manera: <br/>" + serieDes;
+          
+      
+}
+)
+
+ 
