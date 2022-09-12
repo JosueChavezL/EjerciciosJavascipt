@@ -7,10 +7,12 @@ let resultEjercicio5_1 = document.getElementById("resultEjercicio5_1");
 
 btnExecute5_1.addEventListener("click", function (e){
     e.preventDefault;
-    serieNum5_1 = new Array();
     flag = true;
+    let a = 0;
+    let b = 0;
+    let c = 0;
     
-    if (inputNum1.value < 0 || inputNum1.value >100 || inputNum1.value == ""){
+    if (inputNum1.value < 0 || inputNum1.value == ""){
         inputNum1.classList.remove("is-valid");
         inputNum1.classList.add("is-invalid");
         flag = false;         
@@ -18,9 +20,9 @@ btnExecute5_1.addEventListener("click", function (e){
     else{
         inputNum1.classList.remove("is-invalid");
         inputNum1.classList.add("is-valid");
-        serieNum5_1.push(parseFloat(inputNum1.value));   
+        a=parseFloat(inputNum1.value);   
     }
-    if ((inputNum2.value < 0 || inputNum2.value > 100  || inputNum2.value == "")){
+    if ((inputNum2.value < 0 || inputNum2.value == "")){
         inputNum2.classList.remove("is-valid");
         inputNum2.classList.add("is-invalid");  
         flag = false;       
@@ -28,9 +30,9 @@ btnExecute5_1.addEventListener("click", function (e){
     else{
         inputNum2.classList.remove("is-invalid");
         inputNum2.classList.add("is-valid"); 
-        serieNum5_1.push(parseFloat(inputNum2.value));   
+        b=parseFloat(inputNum2.value);   
     }
-    if ((inputNum3.value < 0 || inputNum3.value > 100  || inputNum3.value == "")){
+    if ((inputNum3.value < 0 || inputNum3.value == "")){
         inputNum3.classList.remove("is-valid");
         inputNum3.classList.add("is-invalid");  
         flag = false;       
@@ -38,27 +40,31 @@ btnExecute5_1.addEventListener("click", function (e){
     else{
         inputNum3.classList.remove("is-invalid");
         inputNum3.classList.add("is-valid");   
-        serieNum5_1.push(parseFloat(inputNum3.value));   
+        c=parseFloat(inputNum3.value);   
     }
-    console.log(serieNum5_1);
-    
-    if (flag) {
-        resultEjercicio5_1.innerHTML = "El número mas chico de los 3 ingresador es: " + Menor(serieNum5_1);
+   
+    if(flag){
+
+        if(a == b+c){
+            resultEjercicio5_1.innerHTML = "El número: " + a + " es igual a la suma de: "+ b + " + " + c;
+        }if(b == a+c){
+            resultEjercicio5_1.innerHTML = "El número: " + b + " es igual a la suma de: "+ a + " + " + c;
+        }if(c == a+b){
+            resultEjercicio5_1.innerHTML = "El número: " + c + " es igual a la suma de: "+ a + " + " + b;
+        }if(a != b+c && b != a+c && c != a+b){
+            resultEjercicio5_1.innerHTML = "Ninguno de los 3 numeros es la suma de los otros 2 ";
+        }
+       
     }else{
         resultEjercicio5_1.innerHTML = "Porfavor ingrese un número valido";
     }
     
     
+    
+        
+    
+    
+    
 })
 
 
-function Menor(serie){
-    let numMenor = serie[0];
-    for (let i = 0; i < serie.length; i++) {
-   
-    if(serie[i] < numMenor){
-        numMenor = serie[i];
-    }     
-    }
-return numMenor; 
-}
