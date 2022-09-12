@@ -7,7 +7,7 @@ btnExecute5_1.addEventListener("click", function (e){
     e.preventDefault;
     flag = true;
     let num; 
-    if (inputNum1.value < 100 || inputNum1.value >200|| inputNum1.value == ""){
+    if (inputNum1.value == 0 || inputNum1.value == "" || isNaN(inputNum1.value)){
         inputNum1.classList.remove("is-valid");
         inputNum1.classList.add("is-invalid");
         flag = false;         
@@ -19,10 +19,10 @@ btnExecute5_1.addEventListener("click", function (e){
     }
     
     if (flag) {
-        if(num%3 == 0){
-            resultEjercicio5_1.innerHTML = "El número es multiplo de 3";
+        if(num%2 == 0){
+            resultEjercicio5_1.innerHTML = "El número es par";
         }else{
-            resultEjercicio5_1.innerHTML = "El número NO es multiplo de 3";
+            resultEjercicio5_1.innerHTML = "El número es impar";
         }
         
     }else{
