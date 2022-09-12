@@ -43,7 +43,7 @@ btnExecute5_1.addEventListener("click", function (e){
     console.log(serieNum5_1);
     
     if (flag) {
-        resultEjercicio5_1.innerHTML = "El número mas grande de los 3 ingresador es: " + Mayor(serieNum5_1);
+        resultEjercicio5_1.innerHTML = "El número mas chico de los 3 ingresador es: " + Menor(serieNum5_1);
     }else{
         resultEjercicio5_1.innerHTML = "Porfavor ingrese un número valido";
     }
@@ -52,13 +52,13 @@ btnExecute5_1.addEventListener("click", function (e){
 })
 
 
-function Mayor(serie){
-    let numMayor = 0;
+function Menor(serie){
+    let numMenor = serie[0];
     for (let i = 0; i < serie.length; i++) {
    
-    if(serie[i] > numMayor){
-        numMayor = serie[i];
+    if(serie[i] < numMenor){
+        numMenor = serie[i];
     }     
     }
-return numMayor; 
+return numMenor; 
 }
